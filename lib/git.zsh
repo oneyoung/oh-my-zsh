@@ -2,7 +2,7 @@
 function git_prompt_info() {
   local ref
   # ignore the homerc git
-  if [[ $HOME ==  $(git rev-parse --show-toplevel) ]]; then
+  if [[ $HOME ==  $(git rev-parse --show-toplevel 2>/dev/null) ]]; then
      return
   fi
   if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]; then
